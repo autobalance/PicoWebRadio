@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="css/AudioVisualizer.css">
+        <link rel="stylesheet" href="css/StationList.css">
+        <style>
+            /* https://stackoverflow.com/a/31712795 */
+            /* https://cssgradient.io/ */
+            body {
+                background: radial-gradient(ellipse at top, rgba(156,148,233,1) -20%, rgba(196,86,25,1) 120%);
+                background-attachment: fixed;
+            }
+
+            #main {
+              margin-left: 250px;
+              transition: margin-left .5s;
+            }
+
+            #title-bar {
+              display: flex;
+              width: 100%;
+              height: 60px;
+              padding-top: 0px;
+              margin-top: 0px;
+              justify-content: center;
+              align-items: center;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div id="station-list">
+          <a href="javascript:void(0)" style="background-color: gray; border-radius: 10px;" onclick="webRadioScan()">Scan</a>
+        </div>
+
+        <a href="javascript:void(0)" id="station-list-header" onclick="stationListToggle()">&#9776; Stations</a>
+
+        <div id="main">
+            <div id="title-bar">
+                <object type="image/svg+xml" data="title-logo.svg" width=300 height=50></object>
+            </div>
+            <canvas id="audio-visualizer"></canvas>
+            <audio crossorigin="anonymous" id="audio"></audio>
+        </div>
+
+        <script type="text/javascript" src="js/AudioVisualizer.js" defer></script>
+        <script type="text/javascript" src="js/StationList.js" defer></script>
+        <script type="text/javascript" src="js/WebRadio.js" defer></script>
+    </body>
+</html>

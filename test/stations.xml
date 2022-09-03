@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<station-list>
+  <station>
+    <name>99.9 FM</name>
+    <url>tune/fm/9990</url>
+  </station>
+  <station>
+    <name>880 AM</name>
+    <url>tune/am/880</url>
+  </station>
+</station-list>

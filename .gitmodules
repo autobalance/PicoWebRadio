@@ -1,0 +1,6 @@
+[submodule "src/mpy/natmod/ext/micropython"]
+	path = src/mpy/natmod/ext/micropython
+	url = https://github.com/micropython/micropython
+[submodule "src/mpy/natmod/ext/pico-sdk"]
+	path = src/mpy/natmod/ext/pico-sdk
+	url = https://github.com/raspberrypi/pico-sdk

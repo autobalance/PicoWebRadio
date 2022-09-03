@@ -1,0 +1,33 @@
+#!/bin/bash
+
+PICO_SDK_PATH=`pwd`/ext/pico-sdk
+
+mkdir -p include
+
+#RP2040_FILE=`pwd`/include/RP2040.h
+RP2040_REGS_FILE=`pwd`/include/RP2040_regs.h
+RP2040_STRUCTS_FILE=`pwd`/include/RP2040_structs.h
+
+# can be used to create the standard CMSIS header for the RP2040 (using ARM's SVDConv utility):
+# https://github.com/Open-CMSIS-Pack/devtools/releases/download/tools/svdconv/3.3.42/svdconv-3.3.42-linux64.zip
+#./SVDConv ${PICO_SDK_PATH}/src/rp2040/hardware_regs/rp2040.svd --generate=header -o ../
+#sed -i "/^#include \"system_RP2040.h\"/ s/./\/\/&/" ${RP2040_FILE}
+
+cd ${PICO_SDK_PATH}/src/rp2040/hardware_regs/include/
+
+echo "#ifndef _RP2040_REGS_H" > ${RP2040_REGS_FILE}
+echo "#define _RP2040_REGS_H" >> ${RP2040_REGS_FILE}
+echo "" >> ${RP2040_REGS_FILE}
+find * -type f | awk '{print "#include \""$0"\""}' >> ${RP2040_REGS_FILE}
+echo "" >> ${RP2040_REGS_FILE}
+echo "#endif" >> ${RP2040_REGS_FILE}
+sed -i "/^#include \"hardware\/regs\/addressmap\.h\"/ s/./\/\/&/" ${RP2040_REGS_FILE}
+
+cd ${PICO_SDK_PATH}/src/rp2040/hardware_structs/include/
+
+echo "#ifndef _RP2040_STRUCTS_H" > ${RP2040_STRUCTS_FILE}
+echo "#define _RP2040_STRUCTS_H" >> ${RP2040_STRUCTS_FILE}
+echo "" >> ${RP2040_STRUCTS_FILE}
+find * -type f | awk '{print "#include \""$0"\""}' >> ${RP2040_STRUCTS_FILE}
+echo "" >> ${RP2040_STRUCTS_FILE}
+echo "#endif" >> ${RP2040_STRUCTS_FILE}

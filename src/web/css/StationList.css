@@ -1,0 +1,38 @@
+/*
+    Custom CSS for the station sidebar.
+
+    Much help from https://www.w3schools.com/howto/howto_js_sidenav.asp
+*/
+#station-list {
+    position: fixed;
+    top: 0;
+    padding-top: 60px;
+    left: 0;
+    height: 100%;
+    width: 250px;
+    background-color: #222;
+    overflow-x: hidden;
+    transition: 0.5s;
+    box-shadow: 0px 0 20px 0 #555;
+}
+
+#station-list a {
+    display: block;
+    padding: 8px 8px 8px 45px;
+    text-decoration: none;
+    font-family: roboto;
+    font-size: 30px;
+    color: #ccc;
+    transition: 0.3s;
+}
+
+#station-list-header {
+    position: absolute;
+    top: 5px;
+    left: 10px;
+    margin-left: 0px;
+    text-decoration: none;
+    font-family: roboto;
+    font-size: 30px;
+    color: #ccc;
+}
