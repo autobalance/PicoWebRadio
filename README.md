@@ -132,5 +132,4 @@ to modify the test to use and audio file (see [audio_srv.py](test/audio_srv.py))
 
 ## License
 
-This project is licensed under the BSD 3-Clause License and The MIT License (MIT) - see the [LICENSE](LICENSE)
-file for details.
+This project is licensed under The MIT License (MIT) - see the [LICENSE](LICENSE) file for details.
