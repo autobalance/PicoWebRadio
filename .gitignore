@@ -1,0 +1,6 @@
+*.o
+*.mpy
+*.wav
+src/mpy/natmod/include/RP2040_regs.h
+src/mpy/natmod/include/RP2040_structs.h
+build/*
